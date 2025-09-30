@@ -1,16 +1,63 @@
-# React + Vite
+# 📘 React JS Practical Exam
+---
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 1. Backend Setup 
 
-Currently, two official plugins are available:
+* Use **JSON Server** as a mock API.
+* Create a resource called **products** with the following fields:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+  ```json
+  {
+    "id": 1,
+    "title": "Laptop",
+    "category": "Electronics",
+    "price": 50000
+  }
+  ```
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 2. Redux Toolkit Setup 
 
-## Expanding the ESLint configuration
+* Configure **Redux Toolkit** store and slices.
+* Create a **productSlice** that handles:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+  * Fetch all products (GET)
+  * Add product (POST)
+  * Update product (PUT)
+  * Delete product (DELETE)
+
+---
+
+## 3. CRUD Functionality (15 Marks)
+
+* **Add Product** form (title, category, price).
+
+* **Delete Product** option.
+* All data must be updated in the JSON Server (API).
+* State must be managed through Redux Toolkit (not local state).
+
+---
+
+
+---
+
+## 4. UI/UX & Code Quality (5 Marks)
+
+* Use clean UI (basic styling is fine).
+* Proper folder structure (`components`, `redux`, `pages`).
+* Code should be readable and properly commented.
+
+---
+
+
+ 
+
+
+
+**Result video**
+click here = <a href ="https://drive.google.com/file/d/1bca1G93M-lQuguYcT858xRYkLV0Do3ho/view?usp=sharing"> video link </a>
+
+**Result screenshot**
+
+<img width="1911" height="851" alt="Image" src="https://github.com/user-attachments/assets/a3e24d13-f642-4b8d-a47f-f8bf92fd599f" />
