@@ -60,4 +60,4 @@ click here = <a href ="https://drive.google.com/file/d/1w12RqehCbmwd6LnyyEXkbYIv
 
 **Result screenshot**
 
-<img src="https://drive.google.com/file/d/181XEhRxyMRln2RTlR5aLIOrPMQGcM8aB/view?usp=sharing">
+<img src="https://drive.google.com/file/d/181XEhRxyMRln2RTlR5aLIOrPMQGcM8aB/view?usp=drive_link">
