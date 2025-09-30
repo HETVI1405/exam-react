@@ -1,9 +1,7 @@
-
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 const URL = "http://localhost:3000/product";
-
 
 export const fetchproduct = createAsyncThunk("product/fetchproduct", async () => {
   const res = await axios.get(URL);
@@ -20,17 +18,19 @@ export const deleteproduct = createAsyncThunk("products/deleteproduct", async (i
   return id;
 });
 
-export const editproduct = createAsyncThunk("products/editproduct", async ({ id, updatedData }) => {
-
-  const res = await axios.put(`${URL}/${id}`, updatedData);
-  return res.data;
-});
+export const editproduct = createAsyncThunk(
+  "products/editproduct",
+  async ({ id, updatedData }) => {
+    const res = await axios.put(`${URL}/${id}`, updatedData);
+    return res.data;
+  }
+);
 
 const initialState = {
-  allproducts: [],   
-  status: 'loading', 
+  allproducts: [],
+  status: "loading",
   error: null,
-  products:[] 
+  products: []
 };
 
 const ProductSlice = createSlice({
@@ -38,42 +38,36 @@ const ProductSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-  
     builder
       .addCase(fetchproduct.pending, (state) => {
         state.status = "loading";
       })
       .addCase(fetchproduct.fulfilled, (state, action) => {
         state.status = "succeeded";
-
-        state.allproducts = action.payload; 
+        state.allproducts = action.payload;
         state.products = action.payload;
       })
       .addCase(fetchproduct.rejected, (state, action) => {
         state.status = "failed";
         state.error = action.error.message;
+      })
+      .addCase(addproduct.fulfilled, (state, action) => {
+        state.allproducts.push(action.payload);
+        state.products.push(action.payload);
+      })
+      .addCase(deleteproduct.fulfilled, (state, action) => {
+        state.allproducts = state.allproducts.filter((p) => p.id !== action.payload);
+        state.products = state.products.filter((p) => p.id !== action.payload);
+      })
+      .addCase(editproduct.fulfilled, (state, action) => {
+        const updatedProduct = action.payload;
+        state.allproducts = state.allproducts.map((p) =>
+          p.id === updatedProduct.id ? updatedProduct : p
+        );
+        state.products = state.products.map((p) =>
+          p.id === updatedProduct.id ? updatedProduct : p
+        );
       });
-
- 
-    builder.addCase(addproduct.fulfilled, (state, action) => {
-      state.allproducts.push(action.payload);
-      state.products.push(action.payload);
-    });
-
--
-    builder.addCase(deleteproduct.fulfilled, (state, action) => {
-    
-      state.allproducts = state.allproducts.filter((product) => product.id !== action.payload);
-      state.products = state.products.filter((product) => product.id !== action.payload); // FIXED
-    });
-
-
-    builder.addCase(editproduct.fulfilled, (state, action) => {
-      const updatedproduct = action.payload;
-
-   
-      
-    });
   },
 });
 
