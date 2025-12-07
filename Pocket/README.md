@@ -44,8 +44,4 @@ src/
  └─ App.jsx
 ```
 
-## 📸 Recording
-
-
-
 
