@@ -1,0 +1,82 @@
+@import "tailwindcss";
+body{
+  background-color:rgb(250, 249, 249) ;
+  color: black;
+}
+.img{
+    content: "";
+  display: inline;
+
+  background-image: url("https://static.vecteezy.com/system/resources/thumbnails/010/829/988/small/outline-drawing-smartphone-elegant-thin-line-style-design-png.png");
+  background-size: cover;
+  background-position: center;
+}
+@keyframes scrollColumn {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+.animate-scrollColumn {
+  animation: scrollColumn 18s linear infinite;
+}
+
+#span-1 {
+  bottom: 0px;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  display: block;
+  font-weight: 500;
+  height: 56px;
+  left: 0px;
+  min-height: auto;
+  min-width: auto;
+  right: 0px;
+  text-align: center;
+  top: 0px;
+  width: 138.062px;
+  position: relative;
+  font-size: 1.25rem;
+  --tw-text-opacity: 1;
+  inset: 0px;
+}
+.hover\:bg-gray-800:hover {
+  --tw-bg-opacity: 1;
+  background-color: gray;
+}
+:hover.card {
+background-color: rgb(27, 27, 27);
+}
+:active.card {
+  background-color: rgb(74, 74, 74);
+}
+:focus.card {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #00c4e4;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-size: 14px;
+  animation: fadeInOut 2s ease;
+  z-index: 9999;
+}
+
+.toast.error {
+  background: #ff3b30;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(-10px); }
+  10% { opacity: 1; transform: translateY(0); }
+  90% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(-10px); }
+}
