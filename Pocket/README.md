@@ -15,11 +15,11 @@ Track your spending, manage budgets, and stay organized with a clean UI.
 * Responsive layout for all screens
 
 ## Output video
-video link:- <a href="">click here</a>
+video link:- <a href="https://drive.google.com/file/d/1OOyQxjMqkMOSiFGnNg9LXuvTt4CqgWYl/view?usp=sharing">click here</a>
 
 ## Hosting 
 
-live hosting :- <a href="">   </a>
+live hosting :- <a href="https://exam-react-five-pied.vercel.app/"> https://exam-react-five-pied.vercel.app/ </a>
 
 
 ## 🛠 Tech Stack
